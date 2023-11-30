@@ -163,3 +163,4 @@ cython_debug/
 *.png
 *.html
 !index.html
+html/map_01/tilemapresource.xml
