@@ -20,7 +20,7 @@ jobs:
           sudo apt-add-repository ppa:ubuntugis/ubuntugis-unstable
           sudo apt-get update
           sudo apt-get install gdal-bin libgdal-dev
-          pip install GDAL
+          pip install -r requirements.txt
       - name: make tiles
         run: ./make_tiles.sh
       - name: Commit data
