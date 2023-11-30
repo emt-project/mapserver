@@ -17,10 +17,13 @@ jobs:
           cache: "pip"
       - name: Install Dependencies
         run: |
-          sudo apt-add-repository ppa:ubuntugis/ubuntugis-unstable
-          sudo apt-get update
-          sudo apt-get install gdal-bin libgdal-dev
-          pip install -r requirements.txt
+            sudo add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update
+            sudo apt-get update
+            sudo apt-get install gdal-bin
+            sudo apt-get install libgdal-dev
+            export CPLUS_INCLUDE_PATH=/usr/include/gdal
+            export C_INCLUDE_PATH=/usr/include/gdal
+            pip install GDAL
       - name: make tiles
         run: ./make_tiles.sh
       - name: Commit data
