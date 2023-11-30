@@ -7,23 +7,19 @@ on:
 
 jobs:
   build_pages:
-    name: Publish Transcription Status
+    name: Make Tiles
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-          cache: "pip"
       - name: Install Dependencies
         run: |
             sudo add-apt-repository ppa:ubuntugis/ppa && sudo apt-get update
             sudo apt-get update
             sudo apt-get install gdal-bin
             sudo apt-get install libgdal-dev
-            export CPLUS_INCLUDE_PATH=/usr/include/gdal
-            export C_INCLUDE_PATH=/usr/include/gdal
-            pip install GDAL
       - name: make tiles
         run: ./make_tiles.sh
       - name: Commit data
