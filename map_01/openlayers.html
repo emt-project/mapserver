@@ -11,10 +11,10 @@
         #subheader { height: 12px; text-align: right; font-size: 10px; color: #555;}
         #map { height: 90%; border: 1px solid #888; }
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css" type="text/css">
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
-    <script src="https://unpkg.com/ol-layerswitcher@3.5.0"></script>
-    <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@3.5.0/src/ol-layerswitcher.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.js"></script>
+    <script src="https://unpkg.com/ol-layerswitcher@4.1.1"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ol-layerswitcher@4.1.1/src/ol-layerswitcher.css" />
 </head>
 <body>
     <div id="header"><h1>map_01.tif</h1></div>
@@ -28,7 +28,7 @@
             undefinedHTML: '&nbsp;'
         });
         var map = new ol.Map({
-            controls: ol.control.defaults().extend([mousePositionControl]),
+            controls: ol.control.defaults.defaults().extend([mousePositionControl]),
             target: 'map',
 
             layers: [
@@ -76,7 +76,7 @@
                         new ol.layer.Tile({
                             title: 'Overlay',
                             // opacity: 0.7,
-                            extent: [-1395252.587400, 3258781.240364,5723706.292500, 10190503.932600],
+                            extent: [-4485479.327900, 3177381.230081,9138041.373700, 12331741.625100],
                             source: new ol.source.XYZ({
                                 attributions: '',
                                 minZoom: 2,
@@ -89,7 +89,7 @@
                 }),
             ],
             view: new ol.View({
-                center: [2164226.852550, 6724642.586482],
+                center: [2326281.022900, 7754561.427591],
                 zoom: 2,
             })
         });
